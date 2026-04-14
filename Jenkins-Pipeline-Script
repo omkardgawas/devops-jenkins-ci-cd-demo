@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone Code') {
+            steps {
+                git branch: 'main', url: 'https://github.com/omkardgawas/devops-jenkins-ci-cd-demo.git'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                sh 'echo "Code cloned successfully 🚀"'
+            }
+        }
+    }
+}
